@@ -23,17 +23,62 @@ constructor     - should require the student name, studentNumber and grade (in t
 """
 
 class student:
-
+    name = ""
+    studentNumber = ""
+    grade = 0
+    courses = []
+    grades = []
     # properties should be listed first
 
-    def __init__(): # You will need to create your own input parameters for all methods
-        pass
+    def __init__(self, name, studentNumber, grade, courses=[], grades=[]): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentNumber = studentNumber
+        self.grade = grade
+        self.courses = courses
+        self.grades = grades
 
-    def __del__():
-        pass
+    def __del__(self):
+        print("Shutting down")
 
+    def getHonorRoll(self):
+        x = self.grades
+        x.sort()
+        honorgrades = a[-1]+a[-2]+a[-3]+a[-4]+a[-5]
+        honorgrades = honorgrades/5
+        honorgrades = int(honorgrades)
+        if honorgrades >= 86:
+            return True
+        else:
+            return False
+
+    def showCourses(self):
+        x = self.courses
+        y = print(self.courses)
+        return y
+
+    def showGrade(self, ind):
+        x = self.courses
+        courses = x[ind]
+        y = self.grades
+        grades = y[ind]
+        show = print("{} has a {}percent in {}.".format(self.name, str(grades), str(courses)))
+    
+    def getCourses(self, x):
+        self.courses = x
+    
+    def getGrades(self, y):
+        self.grades = y
+    
     def average(self):
-        pass
+        x = self.grades
+        y = len(x)
+        z = 0
+        for i in range(0,y):
+            a = x[i]
+            z = z+a
+        z = z/y
+        return z
+
 
 def main():
     # This contains test data that will be used by the autograder.
